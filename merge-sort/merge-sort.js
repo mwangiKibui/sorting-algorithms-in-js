@@ -1,5 +1,5 @@
 
-//merging two lists appropriately.
+//merging two arrays appropriately.
 function merge(arr1,arr2){
 
     //make a new array and have two value pointers
@@ -75,36 +75,36 @@ function mergeSort(arr){
 
     let arr2 = arr.slice(mid);
 
-    let arr1_sublists = [],sorted_arr1_sublists = [];
+    let arr1_subarrays = [],sorted_arr1_subarrays = [];
 
-    let arr2_sublists = [],sorted_arr2_sublists = [];
+    let arr2_subarrays = [],sorted_arr2_subarrays = [];
 
-    //get the first sublist.
+    //get the first subarray.
 
-    //loop through array 1 making sublists of two elements
+    //loop through array 1 making subarrays of two elements
     for(let i = 0; i < arr1.length; i+=2){
-        arr1_sublists.push(arr1.slice(i,i + 2));
+        arr1_subarrays.push(arr1.slice(i,i + 2));
     };
 
-    //loop through array 2 making sublists of two elements.
+    //loop through array 2 making subarrays of two elements.
     for(let i = 0; i < arr2.length; i+=2){
-        arr2_sublists.push(arr2.slice(i,i + 2));
+        arr2_subarrays.push(arr2.slice(i,i + 2));
     };
 
-    // sorting each sublist of arr1.
-    for(let i = 0; i < arr1_sublists.length; i+=2){
-        let result = merge(arr1_sublists[i],arr1_sublists[i + 1]);
-        result.forEach((value) => sorted_arr1_sublists.push(value));
+    // sorting each subarray of arr1.
+    for(let i = 0; i < arr1_subarrays.length; i+=2){
+        let result = merge(arr1_subarrays[i],arr1_subarrays[i + 1]);
+        result.forEach((value) => sorted_arr1_subarrays.push(value));
     };
 
-    // sorting each sublist of arr2.
-    for(let i = 0; i < arr2_sublists.length; i+=2){
-        let result = merge(arr2_sublists[i],arr2_sublists[i + 1]);
-        result.forEach((value) => sorted_arr2_sublists.push(value));
+    // sorting each subarray of arr2.
+    for(let i = 0; i < arr2_subarrays.length; i+=2){
+        let result = merge(arr2_subarrays[i],arr2_subarrays[i + 1]);
+        result.forEach((value) => sorted_arr2_subarrays.push(value));
     };
 
 
-    let result = merge(sorted_arr1_sublists,sorted_arr2_sublists);
+    let result = merge(sorted_arr1_subarrays,sorted_arr2_subarrays);
 
     return result;
 };

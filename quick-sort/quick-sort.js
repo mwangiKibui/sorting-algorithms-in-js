@@ -49,7 +49,7 @@ function quickSort(items,left,right){
 
     };
 
-    return items; //return the sorted list
+    return items; //return the sorted array
 
 };
 
